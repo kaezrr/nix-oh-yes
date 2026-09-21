@@ -87,6 +87,11 @@
     nautilus
 
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+
+    fishPlugins.pure
+    fishPlugins.fzf-fish
+    fishPlugins.autopair
+    fishPlugins.bang-bang
   ];
 
   programs.git.enable = true;
@@ -103,6 +108,7 @@
 
   programs.fish = {
     enable = true;
+
     shellAliases =
       let
         eza = "${pkgs.eza}/bin/eza";
@@ -113,6 +119,18 @@
         la = "${eza} -lA --icons=auto --group-directories-first";
         cat = "${bat}";
       };
+
+    interactiveShellInit = ''
+      function fish_user_key_bindings
+        bind \ey forward-word
+        bind \cy forward-char
+      end
+
+      fish_config theme choose catppuccin-mocha
+
+      set -g fish_greeting
+      set -g fish_key_bindings fish_default_key_bindings
+    '';
   };
 
   programs.nh = {
