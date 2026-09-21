@@ -40,7 +40,16 @@
     viAlias = true;
   };
 
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "Anjishnu Banerjee";
+      user.email = "kaezr.dev@gmail.com";
+      init.defaultBranch = "main";
+      pull.rebase = true;
+    };
+  };
+
   programs.lazygit.enable = true;
 
   environment.systemPackages = with pkgs; [
