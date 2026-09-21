@@ -87,6 +87,7 @@
     tree-sitter
     lazygit
     xwayland-satellite
+    mangohud
   ];
 
   programs.niri.enable = true;
@@ -99,6 +100,9 @@
     flake = "/home/kaezr/.config/nixos";
   };
 
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
@@ -108,9 +112,6 @@
       };
     };
   };
-
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
 
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
@@ -143,5 +144,29 @@
   ];
 
   system.stateVersion = "26.05";
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+
+      amdgpuBusId = "PCI:5@0:0:0";
+      nvidiaBusId = "PCI:1@0:0:0";
+    };
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
 }
