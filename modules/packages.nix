@@ -6,5 +6,8 @@
     wget
     fastfetch
     mangohud
+    imv
+    mpv
+    obs-studio
   ];
 }
