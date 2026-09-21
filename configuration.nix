@@ -92,6 +92,9 @@
     fishPlugins.fzf-fish
     fishPlugins.autopair
     fishPlugins.bang-bang
+
+    lua-language-server
+    stylua
   ];
 
   programs.git.enable = true;
