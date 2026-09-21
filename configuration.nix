@@ -5,23 +5,23 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader.limine = {
-  enable = true;
-  efiSupport = true;
-  extraEntries = "
-  /Windows 11
-  protocol: efi
-  path: uuid(d0dd6fba-cd26-4b6f-a98c-9dcc4ab034e3):/EFI/Microsoft/Boot/bootmgfw.efi
-  ";
+    enable = true;
+    efiSupport = true;
+    extraEntries = ''
+      /Windows 11
+      protocol: efi
+      path: uuid(d0dd6fba-cd26-4b6f-a98c-9dcc4ab034e3):/EFI/Microsoft/Boot/bootmgfw.efi
+    '';
   };
 
   # Use latest kernel.
@@ -65,25 +65,25 @@
   users.users."kaezr" = {
     isNormalUser = true;
     description = "kaezr";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   users.extraUsers."kaezr".shell = pkgs.fish;
 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-programs.neovim = {
-  enable = true;
-  defaultEditor = true;
-  vimAlias = true;
-  viAlias = true;
-};
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+    viAlias = true;
+  };
 
-programs.noctalia.enable = true;
-
+  programs.noctalia.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -103,6 +103,8 @@ programs.noctalia.enable = true;
     nixfmt
     fzf
     bat
+    gcc
+    tree-sitter
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -113,8 +115,8 @@ programs.noctalia.enable = true;
   #   enableSSHSupport = true;
   # };
 
-programs.niri.enable = true;
-programs.fish.enable = true;
+  programs.niri.enable = true;
+  programs.fish.enable = true;
 
   # List services that you want to enable:
 
@@ -122,23 +124,23 @@ programs.fish.enable = true;
   # services.openssh.enable = true;
 
   services.greetd = {
-  enable = true;
-  settings = {
-  default_session = {
-  user = "greeter";
-  command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session";
-  };
-  };
+    enable = true;
+    settings = {
+      default_session = {
+        user = "greeter";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session";
+      };
+    };
   };
 
   systemd.services.greetd.serviceConfig = {
-  Type = "idle";
-  StandardInput = "tty";
-  StandardOutput = "tty";
-  StandardError = "journal";
-  TTYReset = true;
-  TTYVHangup = true;
-  TTYVTDisallocate = true;
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal";
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
   };
 
   # Open ports in the firewall.
@@ -171,6 +173,9 @@ programs.fish.enable = true;
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
 }

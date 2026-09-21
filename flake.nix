@@ -2,12 +2,12 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = {self, nixpkgs}: {
-  	nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-	modules = [ ./configuration.nix ];
-	};
+  outputs = { self, nixpkgs }: {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      modules = [ ./configuration.nix ];
+    };
   };
 }
