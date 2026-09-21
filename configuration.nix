@@ -73,28 +73,47 @@
     kitty
     chezmoi
     fastfetch
-    git
-    zoxide
     yazi
-    eza
     wl-clipboard
     nixd
     nixfmt
     fzf
-    bat
     gcc
     tree-sitter
-    lazygit
     xwayland-satellite
     mangohud
     cloudflare-warp
     vulkan-tools
+    nautilus
 
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
   ];
 
-  programs.niri.enable = true;
-  programs.fish.enable = true;
+  programs.git.enable = true;
+  programs.lazygit.enable = true;
+  programs.zoxide = {
+    enable = true;
+    flags = [ "--cmd cd" ];
+  };
+
+  programs.niri = {
+    enable = true;
+    useNautilus = true;
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases =
+      let
+        eza = "${pkgs.eza}/bin/eza";
+        bat = "${pkgs.bat}/bin/bat";
+      in
+      {
+        ll = "${eza} -l --icons=auto --group-directories-first";
+        la = "${eza} -lA --icons=auto --group-directories-first";
+        cat = "${bat}";
+      };
+  };
 
   programs.nh = {
     enable = true;
