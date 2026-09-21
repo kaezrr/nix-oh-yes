@@ -143,6 +143,21 @@
     TTYVTDisallocate = true;
   };
 
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.iosevka
+      ibm-plex
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "Iosevka Nerd Font" ];
+        sansSerif = [ "IBM Plex Sans" ];
+        serif = [ "IBM Plex Serif" ];
+      };
+    };
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
