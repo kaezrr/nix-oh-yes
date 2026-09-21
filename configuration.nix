@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -77,7 +77,6 @@
     zoxide
     yazi
     eza
-    firefox
     wl-clipboard
     nixd
     nixfmt
@@ -90,6 +89,8 @@
     mangohud
     cloudflare-warp
     vulkan-tools
+
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
   ];
 
   programs.niri.enable = true;
