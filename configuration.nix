@@ -88,6 +88,8 @@
     lazygit
     xwayland-satellite
     mangohud
+    cloudflare-warp
+    vulkan-tools
   ];
 
   programs.niri.enable = true;
@@ -100,6 +102,7 @@
     flake = "/home/kaezr/.config/nixos";
   };
 
+  services.cloudflare-warp.enable = true;
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
@@ -154,7 +157,7 @@
     modesetting.enable = true;
     open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    branch = "latest";
 
     prime = {
       offload = {
