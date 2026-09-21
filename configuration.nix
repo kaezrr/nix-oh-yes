@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -99,6 +99,10 @@ programs.noctalia.enable = true;
     eza
     firefox
     wl-clipboard
+    nixd
+    nixfmt
+    fzf
+    bat
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
