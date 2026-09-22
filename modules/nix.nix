@@ -13,6 +13,11 @@
     "flakes"
   ];
 
+  nix.settings.trusted-users = [
+    "root"
+    "kaezr"
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   # LSP and formatter for working with nix

@@ -9,5 +9,6 @@
     imv
     mpv
     obs-studio
+    just
   ];
 }
