@@ -42,12 +42,26 @@
 
   programs.git = {
     enable = true;
-    config = {
-      user.name = "Anjishnu Banerjee";
-      user.email = "kaezr.dev@gmail.com";
-      init.defaultBranch = "main";
-      pull.rebase = true;
-    };
+    config =
+      let
+        delta = "${pkgs.delta}/bin/delta";
+      in
+      {
+        user.name = "Anjishnu Banerjee";
+        user.email = "kaezr.dev@gmail.com";
+        init.defaultBranch = "main";
+        pull.rebase = true;
+
+        core.pager = delta;
+        interactive.diffFilter = "${delta} --color-only";
+        delta = {
+          navigate = true;
+          side-by-side = true;
+          line-numbers = true;
+        };
+
+        merge.conflictStyle = "zdiff3";
+      };
   };
 
   programs.lazygit.enable = true;
@@ -58,6 +72,8 @@
     fzf
     ripgrep
     fd
+    tealdeer
+    btop
 
     fishPlugins.pure
     fishPlugins.fzf-fish

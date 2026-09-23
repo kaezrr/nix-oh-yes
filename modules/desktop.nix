@@ -30,6 +30,7 @@
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "gtk3";
     GSK_RENDERER = "gl";
+    MANPAGER = "nvim +Man!";
   };
 
   fonts = {
