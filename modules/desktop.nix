@@ -18,6 +18,13 @@
     kitty
     yazi
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+
+    # Themeing
+    nwg-look
+    kdePackages.qt6ct
+    dracula-icon-theme
+    dracula-theme
+    bibata-cursors
   ];
 
   environment.sessionVariables = {
