@@ -56,6 +56,8 @@
 
   environment.systemPackages = with pkgs; [
     fzf
+    ripgrep
+    fd
 
     fishPlugins.pure
     fishPlugins.fzf-fish
