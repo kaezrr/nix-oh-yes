@@ -17,4 +17,7 @@
 
   # Use the latest linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Non fatal errors please shut the fuck up
+  boot.kernel.sysctl."kernel.printk" = "3 3 3 3";
 }
