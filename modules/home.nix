@@ -5,12 +5,13 @@
     clobberFiles = true;
     user = "kaezr";
     directory = "/home/kaezr";
+
+    xdg.config.files = {
+      "kitty".source = ../dotfiles/kitty;
+      "fastfetch".source = ../dotfiles/fastfetch;
+      "noctalia".source = ../dotfiles/noctalia;
+      "niri".source = ../dotfiles/niri;
+    };
   };
 
-  hjem.users.kaezr.files = {
-    ".config/kitty".source = ../dotfiles/kitty;
-    ".config/fastfetch".source = ../dotfiles/fastfetch;
-    ".config/noctalia".source = ../dotfiles/noctalia;
-    ".config/niri".source = ../dotfiles/niri;
-  };
 }

@@ -1,8 +1,3 @@
-environment {
-    QT_QPA_PLATFORMTHEME "gtk3"
-    GSK_RENDERER "gl"
-}
-
 spawn-at-startup "noctalia"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 

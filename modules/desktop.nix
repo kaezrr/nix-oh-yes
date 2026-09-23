@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }:
 
 {
-
   programs.niri = {
     enable = true;
     useNautilus = true;
@@ -20,6 +19,11 @@
     yazi
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
   ];
+
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "gtk3";
+    GSK_RENDERER = "gl";
+  };
 
   fonts = {
     packages = with pkgs; [

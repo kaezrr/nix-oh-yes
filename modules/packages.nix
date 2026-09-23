@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   programs.moonlight-qt.enable = true;
 
   environment.systemPackages = with pkgs; [
