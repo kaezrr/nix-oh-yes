@@ -1,0 +1,13 @@
+[bar.default]
+background_opacity = 0.79999998211860657
+center = [ "workspaces" ]
+end = [ "volume", "brightness", "battery", "network", "bluetooth", "clock", "notifications" ]
+show_on_workspace_switch = false
+start = [ "tray", "cpu", "temp", "ram", "active_window" ]
+widget_spacing = 12
+
+[widget.network]
+show_label = false
+
+[widget.tray]
+drawer = true

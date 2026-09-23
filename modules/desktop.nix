@@ -54,7 +54,11 @@
   };
 
   services = {
-    displayManager.ly.enable = true;
+    displayManager.ly = {
+      enable = true;
+      settings.session_log = ".local/state/ly-session.log";
+    };
+
     udisks2.enable = true;
     gvfs.enable = true;
   };
