@@ -8,6 +8,8 @@
     flake = "/home/kaezr/.config/nixos";
   };
 
+  programs.nix-index-database.comma.enable = true;
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

@@ -13,5 +13,7 @@
     mpv
     obs-studio
     just
+    dua
+    duf
   ];
 }
