@@ -4,6 +4,7 @@
   environment.systemPackages = [ pkgs.vulkan-tools ];
 
   hardware.bluetooth.enable = true;
+  hardware.keyboard.qmk.enable = true;
 
   hardware.graphics = {
     enable = true;
