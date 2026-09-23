@@ -12,6 +12,7 @@
       "noctalia".source = ../dotfiles/noctalia;
       "niri".source = ../dotfiles/niri;
     };
-  };
 
+    files."Pictures/wallpapers".source = ../wallpapers;
+  };
 }

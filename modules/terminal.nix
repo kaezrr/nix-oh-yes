@@ -10,8 +10,7 @@
         bat = "${pkgs.bat}/bin/bat";
       in
       {
-        ll = "${eza} -l --icons=auto --group-directories-first";
-        la = "${eza} -lA --icons=auto --group-directories-first";
+        l = "${eza} -lA --icons=auto --group-directories-first";
         cat = "${bat}";
       };
 

@@ -42,6 +42,7 @@
       nerd-fonts.iosevka
       ibm-plex
     ];
+
     fontconfig = {
       enable = true;
       defaultFonts = {
@@ -52,23 +53,5 @@
     };
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        user = "greeter";
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session";
-      };
-    };
-  };
-
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
-    StandardInput = "tty";
-    StandardOutput = "tty";
-    StandardError = "journal";
-    TTYReset = true;
-    TTYVHangup = true;
-    TTYVTDisallocate = true;
-  };
+  services.displayManager.ly.enable = true;
 }
