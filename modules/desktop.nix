@@ -6,10 +6,10 @@
     useNautilus = true;
   };
 
-  programs.noctalia.enable = true;
-
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
+  programs.noctalia = {
+    enable = true;
+    recommendedServices.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     nautilus
