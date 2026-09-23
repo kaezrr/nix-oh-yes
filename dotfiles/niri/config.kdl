@@ -17,6 +17,14 @@ input {
     }
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+
+    hide-when-typing
+    hide-after-inactive-ms 10000
+}
+
 hotkey-overlay {
     skip-at-startup
     hide-not-bound
