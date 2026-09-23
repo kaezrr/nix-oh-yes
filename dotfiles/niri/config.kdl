@@ -1,4 +1,3 @@
-include "startup.kdl"
 include "decorations.kdl"
 include "windowrules.kdl"
 include "keybinds.kdl"
@@ -33,3 +32,5 @@ hotkey-overlay {
 debug {
   honor-xdg-activation-with-invalid-serial
 }
+
+screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
