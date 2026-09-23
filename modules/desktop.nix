@@ -53,5 +53,9 @@
     };
   };
 
-  services.displayManager.ly.enable = true;
+  services = {
+    displayManager.ly.enable = true;
+    udisks2.enable = true;
+    gvfs.enable = true;
+  };
 }
