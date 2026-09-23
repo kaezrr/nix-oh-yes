@@ -1,0 +1,43 @@
+window-rule {
+    match app-id="zen" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.Nautilus" title="Select file to Run"
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.Nautilus" title="Open Files"
+    open-floating true
+}
+
+window-rule {
+    match app-id="steam"
+    exclude title="Steam"
+    open-floating true
+}
+
+window-rule {
+    match title="- PROJECT$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="kitty"
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match app-id="dev.noctalia.Noctalia.Settings"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+window-rule {
+  geometry-corner-radius 10
+  variable-refresh-rate true;
+  clip-to-geometry true
+}

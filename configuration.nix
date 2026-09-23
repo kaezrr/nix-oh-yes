@@ -10,6 +10,7 @@
     ./modules/nix.nix
     ./modules/packages.nix
     ./modules/terminal.nix
+    ./modules/home.nix
   ];
 
   networking.hostName = "nixos";

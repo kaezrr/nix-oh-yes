@@ -1,0 +1,122 @@
+[backdrop]
+enabled = true
+
+[bar.default]
+background_opacity = 0.79999998211860657
+center = [ "workspaces" ]
+end = [ "volume", "brightness", "battery", "network", "bluetooth", "clock", "notifications" ]
+show_on_workspace_switch = false
+start = [ "tray", "cpu", "temp", "ram", "active_window" ]
+widget_spacing = 12
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[keybinds]
+down = [ "Down", "Ctrl+n" ]
+up = [ "Up", "Ctrl+p" ]
+validate = [ "Return", "KP_Enter", "space", "Ctrl+y" ]
+
+[lockscreen]
+blurred_desktop = true
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.59999999999999998
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 176.0
+    box_width = 560.0
+    cx = 960.0
+    cy = 260.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+
+[osd]
+position = "bottom_center"
+
+[shell]
+font_family = "Iosevka NF"
+password_style = "random"
+
+    [shell.animation]
+    speed = 1.5000000223517418
+
+    [shell.panel]
+    transparency_mode = "soft"
+
+[theme]
+builtin = "Kanagawa"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+[wallpaper.default]
+path = "/home/kaezr/Pictures/wallpapers/grass.png"
+
+[wallpaper.last]
+path = "/home/kaezr/Pictures/wallpapers/grass.png"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/kaezr/Pictures/wallpapers/grass.png"
+
+[widget.network]
+show_label = false
+
+[widget.tray]
+drawer = true

@@ -1,0 +1,27 @@
+include "startup.kdl"
+include "decorations.kdl"
+include "windowrules.kdl"
+include "keybinds.kdl"
+
+input {
+    keyboard {
+        numlock
+        xkb {
+            options "ctrl:nocaps"
+        }
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+debug {
+  honor-xdg-activation-with-invalid-serial
+}

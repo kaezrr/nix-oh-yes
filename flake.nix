@@ -13,6 +13,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,6 +32,7 @@
         modules = [
           ./configuration.nix
           inputs.nix-index-database.nixosModules.default
+          inputs.hjem.nixosModules.default
         ];
       };
       formatter.${system} = pkgs.nixfmt-tree;
