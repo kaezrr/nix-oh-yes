@@ -20,6 +20,25 @@
         "type": "github"
       }
     },
+    "hjem-impure": {
+      "inputs": {
+        "hjem": [],
+        "nixpkgs": []
+      },
+      "locked": {
+        "lastModified": 1786164166,
+        "narHash": "sha256-2S8BRs/a9ElePH7o7LSTib4t/oQ0p9sn/qjAP6BmTK8=",
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "rev": "206320fa7d060232f19c4d2831e66471d8e5d161",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -80,6 +99,7 @@
     "root": {
       "inputs": {
         "hjem": "hjem",
+        "hjem-impure": "hjem-impure",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "zen-browser": "zen-browser"

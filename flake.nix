@@ -18,6 +18,12 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hjem-impure = {
+      url = "github:Rexcrazy804/hjem-impure";
+      inputs.nixpkgs.follows = "";
+      inputs.hjem.follows = "";
+    };
   };
 
   outputs =
@@ -29,6 +35,7 @@
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
+
         modules = [
           ./configuration.nix
           inputs.nix-index-database.nixosModules.default

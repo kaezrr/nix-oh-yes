@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -14,16 +14,6 @@
   ];
 
   networking.hostName = "nixos";
-
-  users.users.kaezr = {
-    isNormalUser = true;
-    description = "kaezr";
-    shell = pkgs.fish;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-  };
 
   time.timeZone = "Asia/Kolkata";
 
