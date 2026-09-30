@@ -8,7 +8,14 @@
     flake = "/home/kaezr/.config/nixos";
   };
 
-  programs.nix-index-database.comma.enable = true;
+  programs = {
+    nix-index-database.comma.enable = true;
+    nix-index = {
+      enableFishIntegration = false;
+      enableBashIntegration = false;
+      enableZshIntegration = false;
+    };
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
