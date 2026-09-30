@@ -28,11 +28,4 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-
-  # LSP and formatter for working with nix
-  environment.systemPackages = with pkgs; [
-    nixfmt
-    nixd
-  ];
-
 }

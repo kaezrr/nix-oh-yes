@@ -24,6 +24,11 @@
       inputs.nixpkgs.follows = "";
       inputs.hjem.follows = "";
     };
+
+    neovim = {
+      url = "github:kaezrr/neovim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

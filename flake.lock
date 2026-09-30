@@ -60,6 +60,42 @@
         "type": "github"
       }
     },
+    "mnw": {
+      "locked": {
+        "lastModified": 1790357809,
+        "narHash": "sha256-6IWPAMEotKY/nQvs1kU6qwMwCXTeW5HlOhw2RwFHFdI=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "a582dbedf7c8ec7effa6939ac5bdd23b27267d1b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
+    "neovim": {
+      "inputs": {
+        "mnw": "mnw",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790768683,
+        "narHash": "sha256-VAoBjgoDR4YCKdt4mHXTz7W6o1CdPizvOBOu1gFRed8=",
+        "owner": "kaezrr",
+        "repo": "neovim",
+        "rev": "351658e883ff3be94ade99c74aec3951520d0b3a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kaezrr",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -100,6 +136,7 @@
       "inputs": {
         "hjem": "hjem",
         "hjem-impure": "hjem-impure",
+        "neovim": "neovim",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "zen-browser": "zen-browser"

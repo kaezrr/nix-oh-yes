@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.fish = {
@@ -10,8 +10,14 @@
         bat = "${pkgs.bat}/bin/bat";
       in
       {
-        l = "${eza} -lA --icons=auto --group-directories-first";
         cat = "${bat}";
+        vi = "nvim";
+        vim = "nvim";
+
+        l = "${eza} -l --icons=auto --group-directories-first --git";
+        la = "${eza} -lA --icons=auto --group-directories-first --git";
+        lt = "${eza} --tree --level=2";
+        ls = "${eza}";
       };
 
     interactiveShellInit = ''
@@ -30,13 +36,6 @@
   programs.zoxide = {
     enable = true;
     flags = [ "--cmd cd" ];
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
-    viAlias = true;
   };
 
   programs.git = {
@@ -79,10 +78,11 @@
     fishPlugins.autopair
     fishPlugins.bang-bang
 
-    # Needed for neovim
-    gcc
-    tree-sitter
-    lua-language-server
-    stylua
+    inputs.neovim.packages."${pkgs.stdenv.hostPlatform.system}".default
   ];
+
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 }
