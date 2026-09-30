@@ -6,7 +6,6 @@
   boot.loader.limine = {
     enable = true;
     efiSupport = true;
-    maxGenerations = 3;
     extraEntries = ''
       /Windows 11
       protocol: efi
