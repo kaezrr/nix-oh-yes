@@ -3,7 +3,6 @@
 {
   programs.niri = {
     enable = true;
-    useNautilus = true;
   };
 
   programs.noctalia = {
@@ -15,12 +14,22 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+    ];
+  };
+
+  xdg.mime.defaultApplications = {
+    "application/pdf" = "zen-beta.desktop";
+  };
+
   environment.systemPackages = with pkgs; [
-    nautilus
+    ripdrag
     xwayland-satellite
     wl-clipboard
     kitty
-    yazi
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Themeing

@@ -11,6 +11,7 @@
     ./modules/packages.nix
     ./modules/terminal.nix
     ./modules/home.nix
+    ./modules/yazi/mod.nix
   ];
 
   networking.hostName = "nixos";
