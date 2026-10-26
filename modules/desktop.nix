@@ -26,7 +26,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    ripdrag
     xwayland-satellite
     wl-clipboard
     kitty

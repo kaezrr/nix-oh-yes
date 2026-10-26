@@ -9,7 +9,6 @@
         mount
         git
         ouch
-        drag
         ;
     };
 
@@ -43,12 +42,6 @@
           on = [ "C" ];
           run = "plugin ouch";
           desc = "Compress with ouch";
-        }
-
-        {
-          on = [ "<C-d>" ];
-          run = "plugin drag";
-          desc = "Drag Files";
         }
 
         {
