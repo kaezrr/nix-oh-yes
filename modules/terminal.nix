@@ -8,6 +8,7 @@
       let
         eza = "${pkgs.eza}/bin/eza";
         bat = "${pkgs.bat}/bin/bat";
+        lazygit = "${pkgs.lazygit}/bin/lazygit";
       in
       {
         cat = "${bat}";
@@ -18,6 +19,7 @@
         la = "${eza} -lA --icons=auto --group-directories-first --git";
         lt = "${eza} --tree --level=2";
         ls = "${eza}";
+        lg = "${lazygit}";
       };
 
     interactiveShellInit = ''
